@@ -57,3 +57,31 @@
 .team .member .pic img {
     height: 180px;
 }
+
+iframe {
+    width: 470px;
+}
+
+@media (max-width: 768px) {
+    iframe {
+        width: 330px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slide-animation {
+    animation: slide 3s ease-in-out infinite;
+}
