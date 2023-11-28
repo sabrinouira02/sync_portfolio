@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,12 @@ export class HeaderComponent implements OnInit {
   isHeader = false;
   currentUrl: string = '';
   
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private translate: TranslateService) {
+
+    translate.setDefaultLang('en'); // Langue par défaut
+    translate.use('en'); // Langue initiale
+
     // Écoute les changements de route
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -28,6 +34,9 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
   @HostListener('window:scroll', [])
   onWindowScroll() {
     // Logique pour déterminer si le défilement a atteint un certain seuil
