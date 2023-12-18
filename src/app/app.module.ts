@@ -35,12 +35,12 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  // providers: [
-  //   {
-  //     provide: LocationStrategy,
-  //     useClass: HashLocationStrategy, // oldOne: PathLocationStrategy
-  //   },
-  // ],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy, // oldOne: PathLocationStrategy
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
