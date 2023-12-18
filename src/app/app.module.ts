@@ -10,6 +10,7 @@ import { PortfolioDetailsComponent } from './home/portfolio-details/portfolio-de
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -20,7 +21,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PortfolioDetailsComponent
+    PortfolioDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,11 +31,16 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  // providers: [
+  //   {
+  //     provide: LocationStrategy,
+  //     useClass: HashLocationStrategy, // oldOne: PathLocationStrategy
+  //   },
+  // ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

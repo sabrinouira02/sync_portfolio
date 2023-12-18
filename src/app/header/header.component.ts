@@ -5,21 +5,19 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   isHeaderScrolled = false;
   isHeader = false;
   currentUrl: string = '';
-  
-  constructor(private router: Router,
-              private translate: TranslateService) {
 
+  constructor(private router: Router, private translate: TranslateService) {
     translate.setDefaultLang('en'); // Langue par défaut
     translate.use('en'); // Langue initiale
 
     // Écoute les changements de route
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
         // Vérifie si la nouvelle route est différente de '/'
@@ -52,19 +50,19 @@ export class HeaderComponent implements OnInit {
     // Inverse l'état de la classe
     this.isNavbarActive = !this.isNavbarActive;
   }
-  
+
   activeLink: string = '/';
-  
+
   setActiveLink(link: string) {
     this.activeLink = link;
   }
 
   isMobile: boolean = false;
-  mediaQueryList = window.matchMedia('(max-width: 767px)')
-  
+  mediaQueryList = window.matchMedia('(max-width: 767px)');
+
   ngOnInit() {
     // Ajoutez un écouteur pour détecter les changements d'état mobile
-    this.handleMediaQueryChange();  // Initialiser l'état mobile
+    this.handleMediaQueryChange(); // Initialiser l'état mobile
 
     // Utiliser matchMedia dans une fonction distincte
     this.mediaQueryList.addListener(() => this.handleMediaQueryChange());
