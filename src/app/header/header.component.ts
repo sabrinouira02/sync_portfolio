@@ -58,7 +58,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isMobile: boolean = false;
-  mediaQueryList = window.matchMedia('(max-width: 767px)');
+  mediaQueryList = window.matchMedia('(max-width: 1200px)');
 
   ngOnInit() {
     // Ajoutez un écouteur pour détecter les changements d'état mobile

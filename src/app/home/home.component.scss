@@ -86,3 +86,64 @@ iframe {
     animation: slide 3s ease-in-out infinite;
 }
 
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1200px){
+    .portfolio {
+        margin: 120px 80px 1600px 80px; 
+    }
+
+    .article {
+        width: 33.33%; /* Chaque article occupe 33.33% de la largeur */
+    }
+
+    .portfolio-image {
+        width: 400px;
+        height: 400px;
+        border-radius: 3px;
+    }
+    
+}
+
+@media (max-width: 1200px){
+    .portfolio {
+        margin: 120px 80px 300% 80px; 
+    }
+
+    .article {
+        width: 50%; /* Chaque article occupe 33.33% de la largeur */
+    }
+
+    .portfolio-image {
+        width: 400px;
+        height: 400px;
+        border-radius: 3px;
+    }
+    
+}
+
+@media (max-width: 768px){
+    .portfolio {
+        margin: 120px 80px 920% 80px; 
+    }
+
+    .article {
+        width: 100%; /* Chaque article occupe 33.33% de la largeur */
+    }
+
+    .portfolio-image {
+        width: 300px;
+        height: 320px;
+        border-radius: 3px;
+    }
+}
+
+.article:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transform: scale(0.95);
+    transition: transform 1.5s ease
+  }

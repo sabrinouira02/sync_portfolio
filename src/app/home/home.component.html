@@ -257,7 +257,7 @@
     </section><!-- End Cta Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -293,9 +293,9 @@
             </div>
 
         </div>
-    </section> -->
+    </section>
 
-    <section id="portfolio" class="portfolio">
+    <!-- <section id="portfolio" class="portfolio">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -312,7 +312,7 @@
                 <li data-filter=".filter-web">Web</li>
             </ul>
 
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="row portfolio-container" *ngIf="time" data-aos="fade-up" data-aos-delay="200">
 
                 <div *ngFor="let projet of projects"
                     [ngClass]="'col-lg-4 col-md-6 portfolio-item ' + 'filter-' + filterCategory(projet.categories)">
@@ -332,7 +332,29 @@
             </div>
 
         </div>
-    </section>
+    </section> -->
+
+    <!-- <div id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>{{ 'portfolio' | translate }}</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+        </div>
+        <div class="portfolio-container">
+            <div class="article" *ngFor="let projet of projects2">
+                <img class="portfolio-image" [src]="projet.jetpack_featured_media_url" alt="{{ projet.title.rendered }}"
+                    routerLink="portfolio-details/{{ projet.id }}" title="Voir détails">
+                <p style="text-align: center;">{{ filterCategory(projet.categories) }}</p>
+                <h2 style="text-align: center; margin-bottom: 50px;">{{ projet.title.rendered }}</h2>
+            </div>
+        </div>
+
+    </div> -->
     <!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
