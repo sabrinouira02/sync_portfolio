@@ -29,11 +29,11 @@
             <div class="row" data-aos="zoom-in">
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+                    <img src="assets/img/clients/printsmarter.png" class="img-fluid" alt="" style="max-width: 80%">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+                    <img src="assets/img/clients/Gazradonquebec_LOGO.png" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
@@ -243,13 +243,11 @@
 
             <div class="row">
                 <div class="col-lg-9 text-center text-lg-start">
-                    <h3>Call To Action</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum.</p>
+                    <h3>{{ 'devis-gratuit' | translate }}</h3>
+                    <p>{{ 'devis-gratuit-text' | translate }}</p>
                 </div>
                 <div class="col-lg-3 cta-btn-container text-center">
-                    <a class="cta-btn align-middle" href="#">Call To Action</a>
+                    <a class="cta-btn align-middle" href="#contact">{{ 'devis-gratuit' | translate }}</a>
                 </div>
             </div>
 
@@ -262,9 +260,7 @@
 
             <div class="section-title">
                 <h2>{{ 'portfolio' | translate }}</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>{{ 'portfolio-text' | translate }}</p>
             </div>
 
             <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -346,11 +342,11 @@
 
         </div>
         <div class="portfolio-container">
-            <div class="article" *ngFor="let projet of projects2">
-                <img class="portfolio-image" [src]="projet.jetpack_featured_media_url" alt="{{ projet.title.rendered }}"
-                    routerLink="portfolio-details/{{ projet.id }}" title="Voir détails">
-                <p style="text-align: center;">{{ filterCategory(projet.categories) }}</p>
-                <h2 style="text-align: center; margin-bottom: 50px;">{{ projet.title.rendered }}</h2>
+            <div class="article" *ngFor="let projet of portfolios">
+                <img class="portfolio-image" [src]="projet.image" alt="{{ projet.title }}"
+                    routerLink="portfolio-details/{{ projet._id }}" title="Voir détails">
+                <p style="text-align: center;">{{ filterCategory(projet.category) }}</p>
+                <h2 style="text-align: center; margin-bottom: 50px;">{{ projet.title }}</h2>
             </div>
         </div>
 
@@ -656,31 +652,37 @@
                 </div>
 
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form [formGroup]="form" method="post" (ngSubmit)="onSubmit()" class="php-email-form">
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name">{{ 'your_Name' | translate }}</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
+                                <input type="text" [formControl]="name" class="form-control" id="name" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="name">{{ 'your_Email' | translate }}</label>
-                                <input type="email" class="form-control" name="email" id="email" required>
+                                <input type="email" class="form-control" [formControl]="email" id="email" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="name">{{ 'subject' | translate }}</label>
-                            <input type="text" class="form-control" name="subject" id="subject" required>
+                            <input type="text" class="form-control" [formControl]="subject" id="subject" required>
                         </div>
                         <div class="form-group">
                             <label for="name">{{ 'message' | translate }}</label>
-                            <textarea class="form-control" name="message" rows="10" required></textarea>
+                            <textarea class="form-control" [formControl]="message" rows="10" required></textarea>
                         </div>
+                        <input [formControl]="honeypot" class="hidden" type="text" />
                         <div class="my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
                             <div class="sent-message">{{ 'Your_message_has' | translate }}</div>
                         </div>
-                        <div class="text-center"><button type="submit">{{ 'send_Message' | translate }}</button></div>
+                        <div class="text-center"><button type="submit" [disabled]="isLoading">{{ 'send_Message' |
+                                translate }}</button></div>
+                        <input [formControl]="honeypot" class="hidden" type="text" />
+                        <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+                            <span>{{responseMessage}}</span>
+                        </div>
                     </form>
                 </div>
 

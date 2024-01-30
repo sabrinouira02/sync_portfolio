@@ -93,7 +93,7 @@ iframe {
 
 @media (min-width: 1200px){
     .portfolio {
-        margin: 120px 80px 1600px 80px; 
+        margin: 120px 80px 200px 80px; 
     }
 
     .article {
@@ -127,7 +127,7 @@ iframe {
 
 @media (max-width: 768px){
     .portfolio {
-        margin: 120px 80px 920% 80px; 
+        margin: 120px 80px 60% 80px; 
     }
 
     .article {
@@ -147,3 +147,7 @@ iframe {
     transform: scale(0.95);
     transition: transform 1.5s ease
   }
+
+  .hidden {
+	display: none
+}

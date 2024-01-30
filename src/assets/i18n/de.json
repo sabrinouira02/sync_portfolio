@@ -30,6 +30,7 @@
     "Email_marketing_refers": "E-Mail-Marketing bezieht sich auf die Praxis, gezielte Nachrichten und Werbeinhalte an eine Gruppe von Personen per E-Mail zu senden. Es ist eine Direktmarketingstrategie, die darauf abzielt, Beziehungen zu Kunden aufzubauen.",
     "sms/mms_Advertising_refers": "SMS/MMS-Werbung bezieht sich auf die Praxis, Textnachrichten und Multimedia-Nachrichten zu verwenden, um Werbeinhalte und Marketingnachrichten an Mobiltelefonbenutzer zu senden.",
     "App_development_refers": "App-Entwicklung bezieht sich auf den Prozess der Erstellung von Softwareanwendungen, die speziell für mobile Geräte wie Smartphones und Tablets entwickelt wurden. Es umfasst das Design, die Codierung, das Testen und die Bereitstellung von mobilen Anwendungen.",
+    "portfolio-text": "Wir arbeiten an innovativen und nachhaltigen Entwicklungsprojekten, um die Lebensqualität der lokalen Bevölkerung zu verbessern.",
     "meet_Our": "Treffe unsere Teammitglieder",
     "do_you_have_any_questions": "Haben Sie Fragen? Zögern Sie nicht, uns direkt zu kontaktieren. Unser Team wird sich innerhalb weniger Stunden bei Ihnen melden, um Ihnen zu helfen.",
     "location": "Ort",
@@ -44,7 +45,10 @@
     "useful_Links": "Nützliche Links",
     "our_Services": "Unsere Dienstleistungen",
     "our_Social_Networks": "Unsere sozialen Netzwerke",
+    "our_Social_Networks-text": "Folgen Sie uns auf unseren Plattformen, um über die neuesten Nachrichten und Updates informiert zu bleiben.",
     "all_Rights_Reserved": "Alle Rechte vorbehalten",
     "designed_by": "Entworfen von",
-    "our_team": "Unser Team"
+    "our_team": "Unser Team",
+    "devis-gratuit": "Kostenloser Kostenvoranschlag",
+    "devis-gratuit-text": "Kontaktieren Sie uns noch heute, um Ihren kostenlosen Kostenvoranschlag zu erhalten! Wir stehen Ihnen zur Verfügung, um alle Ihre Fragen zu beantworten und Ihnen eine maßgeschneiderte Schätzung entsprechend Ihren spezifischen Bedürfnissen zu bieten."
 }

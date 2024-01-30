@@ -30,6 +30,7 @@
     "Email_marketing_refers": "Email marketing refers to the practice of sending targeted messages and promotional content to a group of individuals via email. It is a direct marketing strategy that aims to build relationships with customers.",
     "sms/mms_Advertising_refers": "Sms/mms Advertising refers to the practice of using text messages and multimedia messages to deliver promotional content and marketing messages to mobile phone users.",
     "App_development_refers": "App development refers to the process of creating software applications specifically designed to run on mobile devices such as smartphones and tablets. It involves the design, coding, testing, and deployment of mobile applications.",
+    "portfolio-text": "We are working on innovative and sustainable development projects to enhance the quality of life for local populations.",
     "meet_Our": "Meet Our Team Members",
     "do_you_have_any_questions": "Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.",
     "location": "Location",
@@ -44,7 +45,10 @@
     "useful_Links": "Useful Links",
     "our_Services": "Our Services",
     "our_Social_Networks": "Our Social Networks",
+    "our_Social_Networks-text": "Follow us on our platforms to stay informed about the latest news and updates.",
     "all_Rights_Reserved": "All Rights Reserved",
     "designed_by": "Designed by",
-    "our_team": "Our team"
+    "our_team": "Our team",
+    "devis-gratuit": "Free quote",
+    "devis-gratuit-text": "Contact us today to get your free quote! We're here to answer all your questions and provide you with a personalized estimate tailored to your specific needs."
 }
