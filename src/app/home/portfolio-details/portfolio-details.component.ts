@@ -24,8 +24,12 @@ export class PortfolioDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') as string;
-    this.getCategory();
-    this.getSingleProject();
+    console.log('portfolios', this.portfolios);
+    this.singleProject = this.portfolios.find(
+      (portfolio) => portfolio._id.toString() === this.id
+    );
+    // this.getCategory();
+    // this.getSingleProject();
   }
 
   eliminerCaracteres(phrase: string) {

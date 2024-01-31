@@ -8,7 +8,8 @@
                 <li><a routerLink="/">Home</a></li>
                 <li>Portfolio Details</li>
             </ol>
-            <h2>{{ singleProject?.title.rendered }} Details</h2>
+            <!-- <h2>{{ singleProject?.title.rendered }} Details</h2> -->
+            <h2>{{ singleProject?.title }} Details</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -23,8 +24,9 @@
                     <div class="portfolio-details-slider swiper">
                         <div class="swiper-wrapper align-items-center">
 
-                            <img [src]="singleProject?.jetpack_featured_media_url"
-                                alt="{{ singleProject?.title.rendered }}">
+                            <!-- <img [src]="singleProject?.jetpack_featured_media_url"
+                                alt="{{ singleProject?.title.rendered }}"> -->
+                            <img [src]="'../../../'+singleProject?.image" alt="{{ singleProject?.title }}">
 
                             <!-- <div class="swiper-slide">
                                 <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
@@ -44,19 +46,24 @@
                         <h3>Project information</h3>
                         <ul>
                             <li><strong>Category</strong>:
-                                <p>{{ filterCategory(singleProject?.categories) }}</p>
+                                <!-- <p>{{ filterCategory(singleProject?.categories) }}</p> -->
+                                <p>{{ singleProject?.category }}</p>
                             </li>
                             <!-- <li><strong>Client</strong>: ASU Company</li> -->
-                            <li><strong>Project date</strong>: {{ formatDate(singleProject?.date) }}</li>
+                            <!-- <li><strong>Project date</strong>: {{ formatDate(singleProject?.date) }}</li>
                             <li><strong>Project URL</strong>: <a href="{{
                                 eliminerCaracteres(singleProject?.excerpt.rendered) }}" target="_blank">{{
-                                    eliminerCaracteres(singleProject?.excerpt.rendered) }}</a></li>
+                                    eliminerCaracteres(singleProject?.excerpt.rendered) }}</a></li> -->
+                            <li><strong>Project date</strong>: {{ singleProject?.date }}</li>
+
                         </ul>
                     </div>
                     <div class="portfolio-description">
                         <h2>This is portfolio details</h2>
 
-                        {{ eliminerCaracteres(this.singleProject?.content.rendered) }}
+                        <!-- {{ eliminerCaracteres(this.singleProject?.content.rendered) }} -->
+                        {{ this.singleProject?.description }}
+
 
                     </div>
                 </div>
