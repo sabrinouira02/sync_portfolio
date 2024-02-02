@@ -6,7 +6,7 @@
 
             <ol>
                 <li><a routerLink="/">Home</a></li>
-                <li>Portfolio Details</li>
+                <li>Project Details</li>
             </ol>
             <!-- <h2>{{ singleProject?.title.rendered }} Details</h2> -->
             <h2>{{ singleProject?.title }} Details</h2>
@@ -54,12 +54,16 @@
                             <li><strong>Project URL</strong>: <a href="{{
                                 eliminerCaracteres(singleProject?.excerpt.rendered) }}" target="_blank">{{
                                     eliminerCaracteres(singleProject?.excerpt.rendered) }}</a></li> -->
-                            <li><strong>Project date</strong>: {{ singleProject?.date }}</li>
+                            <li *ngIf="singleProject.date"><strong>Project date</strong>: {{ singleProject?.date }}</li>
+                            <li *ngIf="singleProject.url">
+                                <strong>Lien de site</strong>: <a [href]="singleProject.url" target="_blank">{{
+                                    singleProject.url }}</a>
+                            </li>
 
                         </ul>
                     </div>
                     <div class="portfolio-description">
-                        <h2>This is portfolio details</h2>
+                        <h2>This is project description</h2>
 
                         <!-- {{ eliminerCaracteres(this.singleProject?.content.rendered) }} -->
                         {{ this.singleProject?.description }}
